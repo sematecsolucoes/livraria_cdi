@@ -5,6 +5,7 @@
 *target/
 *bin/
 *.class
+desktop.ini
 *.pmd
 *.eclipse-pmd
 *.metadata
