@@ -12,3 +12,4 @@ desktop.ini
 *.tern-project
 rebel.xml
 RemoteSystemsTempFiles
+/target/

@@ -8,6 +8,7 @@ import java.util.List;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 import javax.persistence.Temporal;
@@ -17,7 +18,7 @@ import javax.persistence.TemporalType;
 public class Livro implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private Integer id;
 	private String titulo;
 	private String isbn;
@@ -31,7 +32,7 @@ public class Livro implements Serializable {
 	}
 
 	public void adicionaAutor(Autor autor) {
-		this.autores.add(autor);
+		autores.add(autor);
 	}
 
 	public List<Autor> getAutores() {
@@ -59,7 +60,7 @@ public class Livro implements Serializable {
 	}
 
 	public void removeAutor(Autor autor) {
-		this.autores.remove(autor);
+		autores.remove(autor);
 	}
 
 	public void setDataLancamento(Calendar dataLancamento) {
